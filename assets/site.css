@@ -196,19 +196,17 @@ section { padding: 104px 0; scroll-margin-top: 64px; }
 .feature .copy h2 { font-size: clamp(32px, 3.8vw, 46px); margin-bottom: 16px; }
 .feature .copy .lead { font-size: 19px; }
 .feature .copy ul { list-style: none; margin-top: 28px; display: grid; gap: 14px; }
-.points { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 28px; }
-.points > div { border-top: 2px solid color-mix(in srgb, var(--blue) 35%, transparent); padding-top: 12px; }
-.points b { display: block; font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 5px; }
-.points p { color: var(--ink-2); font-size: 15.5px; line-height: 1.5; }
-@media (max-width: 1000px) { .points { gap: 18px 20px; } }
-@media (max-width: 480px) { .points { grid-template-columns: 1fr; } }
+.dots-list { list-style: none; margin-top: 26px; display: grid; gap: 12px; }
+.feature .copy .dots-list li, .dots-list li { display: block; position: relative; padding-left: 22px; font-size: 16.5px; line-height: 1.5; color: var(--ink-2); }
+.feature .copy .dots-list li strong, .dots-list li strong { color: var(--ink); font-weight: 600; }
+.feature .copy .dots-list li::before, .dots-list li::before { content: ""; position: absolute; left: 2px; top: 0.72em; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
 .feature .copy li { display: flex; gap: 12px; align-items: flex-start; font-size: 17px; line-height: 1.45; }
 .feature .copy li svg { width: 19px; height: 19px; flex: none; margin-top: 3px; color: var(--blue); }
 .feature .art { display: flex; justify-content: center; }
 .feature .art .phone { width: min(320px, 80vw); }
 @media (max-width: 860px) {
   .feature { grid-template-columns: 1fr; gap: 44px; text-align: center; }
-  .feature .copy ul, .feature .copy .points { text-align: left; max-width: 520px; margin-inline: auto; }
+  .feature .copy ul { text-align: left; max-width: 520px; margin-inline: auto; }
   .feature.flip .copy { order: 0; }
   .feature + .feature { margin-top: 88px; }
 }
