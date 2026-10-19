@@ -55,22 +55,27 @@
       <symbol id="icloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 01-.5-8A5.5 5.5 0 0117 9a4.5 4.5 0 01-.5 9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
     <symbol id="person-off" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M4 21a8 8 0 0116 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
     <symbol id="check-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="moon-o" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="sun-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   </defs>
 </svg>
 
 <header class="nav">
   <div class="pill">
-    <a class="brand" href="#top" aria-label="Take Form home">
-      <svg class="mark" aria-hidden="true"><use href="#discs"/></svg>
-      <span>Take Form</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="#how">See how it works</a>
-      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">
-        <svg width="14" height="14" aria-hidden="true"><use href="#apple"/></svg>
-        App Store
-      </a>
+    <a class="brand" href="#top" aria-label="Take Form home"><svg class="mark" aria-hidden="true"><use href="#discs"/></svg><span>Take Form</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a class="link" href="#features">Features</a>
+      <a class="link" href="#progress">Progress</a>
+      <a class="link" href="#privacy">Privacy</a>
+      <a class="link" href="#faq">FAQ</a>
     </nav>
+    <div class="nav-right">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+        <svg class="moon" aria-hidden="true"><use href="#moon-o"/></svg>
+        <svg class="sun" aria-hidden="true"><use href="#sun-o"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">Download</a>
+    </div>
   </div>
 </header>
 
@@ -79,7 +84,6 @@
   <!-- ====================== HERO ====================== -->
   <section class="hero">
     <div class="wrap">
-      <svg class="discs" aria-hidden="true"><use href="#discs"/></svg>
       <h1>Habits don't just happen.<br>They take form.</h1>
       <p class="lead">The habit tracker for iPhone that turns small, everyday actions into big changes, at your own pace.</p>
       <div class="cta">
@@ -87,7 +91,7 @@
           <svg width="18" height="18" aria-hidden="true"><use href="#apple"/></svg>
           Download on the App Store
         </a>
-        <a class="btn btn-quiet btn-lg" href="#how">See how it works</a>
+        <a class="btn btn-quiet btn-lg" href="#features">See how it works</a>
       </div>
       <p class="fine">Free to start. No account. Nothing leaves your phone.</p>
       <div class="hero-phone">
@@ -146,7 +150,7 @@
   </section>
 
   <!-- ====================== HOW IT WORKS ====================== -->
-  <section id="how">
+  <section id="features">
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">How it works</p>
@@ -208,7 +212,7 @@
           </div></div>
       </div>
 
-      <div class="feature flip reveal">
+      <div class="feature flip reveal" id="progress">
         <div class="copy">
           <p class="eyebrow">Progress</p>
           <h2>Watch your progress add up.</h2>
@@ -374,7 +378,7 @@
   </section>
 
   <!-- ====================== FAQ ====================== -->
-  <section>
+  <section id="faq">
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">Questions</p>
@@ -396,7 +400,7 @@
     <div class="wrap reveal">
       <svg class="discs" aria-hidden="true"><use href="#discs"/></svg>
       <h2>Every change starts somewhere.</h2>
-      <p class="lead">Here's your first habit. Pick one, and watch your days take form.</p>
+      <p class="lead">Start with one habit today, and watch your days take form.</p>
       <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6760654043">
         <svg width="18" height="18" aria-hidden="true"><use href="#apple"/></svg>
         Download on the App Store
@@ -408,12 +412,11 @@
 
 <footer>
   <div class="wrap">
-    <div>© <span id="year">2026</span> Take Form. All rights reserved.</div>
+    <div>© <span id="year">2026</span> Take Form</div>
     <nav aria-label="Legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
-      <a href="mailto:ricardotorodiaz@gmail.com?subject=Take%20Form%20Support">Support</a>
-      <button id="theme" class="btn btn-quiet btn-sm" type="button" aria-label="Toggle light or dark theme">Light / Dark</button>
+      <a href="mailto:support@takeform.app">support@takeform.app</a>
     </nav>
   </div>
 </footer>

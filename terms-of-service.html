@@ -13,14 +13,25 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="discs" viewBox="0 0 1024 1024"><circle cx="347" cy="512" r="220" fill="var(--disc-1)"/><circle cx="512" cy="512" r="220" fill="var(--disc-2)"/><circle cx="677" cy="512" r="220" fill="var(--blue)"/></symbol>
+  <symbol id="moon-o" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="sun-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </defs></svg>
 <header class="nav">
   <div class="pill">
     <a class="brand" href="index.html" aria-label="Take Form home"><svg class="mark" aria-hidden="true"><use href="#discs"/></svg><span>Take Form</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="index.html#how">See how it works</a>
-      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">App Store</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a class="link" href="index.html#features">Features</a>
+      <a class="link" href="index.html#progress">Progress</a>
+      <a class="link" href="index.html#privacy">Privacy</a>
+      <a class="link" href="index.html#faq">FAQ</a>
     </nav>
+    <div class="nav-right">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+        <svg class="moon" aria-hidden="true"><use href="#moon-o"/></svg>
+        <svg class="sun" aria-hidden="true"><use href="#sun-o"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">Download</a>
+    </div>
   </div>
 </header>
 <main class="legal">
@@ -32,23 +43,27 @@
     <p>These terms govern your use of Take Form ("the App"), developed by the Take Form team. By using the App, you agree to these terms.</p>
 
     <h2>Use of the App</h2>
-    <p>Take Form is a personal habit tracking app. You may use it for personal, non-commercial purposes. You agree not to misuse the App or attempt to access it through unauthorized means.</p>
+    <p>Take Form is a personal habit tracking app for iPhone. You may use it for personal, non-commercial purposes. You agree not to misuse the App or attempt to access it through unauthorized means.</p>
+
+    <h2>Free and Pro</h2>
+    <p>The App offers a free tier, which includes up to three active habits, and a paid tier, Take Form Pro, with additional features such as unlimited habits, Apple Health sync, advanced statistics, Vacation Mode and data export. If a Pro subscription ends, nothing is deleted: your habits and history stay on your device, and you choose which three habits remain active on the free tier.</p>
 
     <h2>Subscriptions &amp; Purchases</h2>
-    <p>The App offers a free tier and a paid subscription (Take Form Pro) with additional features. Subscriptions are managed through Apple's App Store:</p>
+    <p>Take Form Pro is available as an auto-renewable subscription (weekly, monthly or yearly) or as a one-time lifetime purchase. All purchases are managed through Apple's App Store:</p>
     <ul>
-      <li><strong>Monthly and Yearly subscriptions</strong> renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
+      <li><strong>Subscriptions</strong> renew automatically unless cancelled at least 24 hours before the end of the current period.</li>
+      <li><strong>Free trials</strong>, when offered, convert to a paid subscription at the end of the trial unless cancelled before it ends. Trial eligibility is determined by Apple and is limited to one per Apple Account.</li>
       <li><strong>Lifetime purchase</strong> is a one-time, non-recurring payment.</li>
       <li>Payment is charged to your Apple Account at confirmation of purchase.</li>
-      <li>You can manage or cancel subscriptions in your device's Settings &gt; Apple Account &gt; Subscriptions.</li>
-      <li>Refunds are handled by Apple according to their <a href="https://support.apple.com/en-us/HT204084">refund policy</a>.</li>
+      <li>You can manage or cancel subscriptions in your device's Settings &gt; Apple Account &gt; Subscriptions, or at <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>.</li>
+      <li>Refunds are handled by Apple according to their <a href="https://support.apple.com/en-us/118223">refund policy</a>.</li>
     </ul>
 
     <h2>Your Data</h2>
-    <p>You own your data. The App stores habit data locally on your device and optionally syncs it via your personal iCloud account. You can export or delete all your data at any time from within the App. See our <a href="privacy-policy.html">Privacy Policy</a> for details on how data is handled.</p>
+    <p>You own your data. The App stores habit data locally on your device and optionally syncs it via your personal iCloud account. You can export (with Pro) or delete all your data at any time from within the App. See our <a href="privacy-policy.html">Privacy Policy</a> for details on how data is handled.</p>
 
     <h2>Apple Health Integration</h2>
-    <p>If you choose to connect habits to Apple Health, the App reads health data according to the permissions you grant. You can revoke access at any time in your device's Settings &gt; Health &gt; Data Access. The App never writes data to Apple Health.</p>
+    <p>If you choose to connect habits to Apple Health, the App reads health data according to the permissions you grant. You can revoke access at any time in your device's Settings &gt; Health &gt; Data Access &amp; Devices. The App never writes data to Apple Health. Apple Health sync is a Pro feature; habits created from Health templates on the free tier are tracked manually.</p>
 
     <h2>Disclaimer</h2>
     <p>The App is provided "as is" without warranties of any kind. Take Form is a personal productivity tool and does not provide medical, health, or professional advice. We do not guarantee that the App will be error-free or uninterrupted.</p>
@@ -60,18 +75,17 @@
     <p>We may update these terms from time to time. Continued use of the App after changes constitutes acceptance of the updated terms. Changes will be posted on this page with an updated effective date.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about these terms, contact us at <a href="mailto:ricardotorodiaz@gmail.com">ricardotorodiaz@gmail.com</a>.</p>
-    <div class="footer-note">© <span id="year">2026</span> the Take Form team. Take Form — Habit tracker, streaks &amp; stats.</div>
+    <p>If you have questions about these terms, contact us at <a href="mailto:support@takeform.app">support@takeform.app</a>.</p>
+    <div class="footer-note">© 2026 the Take Form team · <a href="https://takeform.app">takeform.app</a></div>
   </div>
 </main>
 <footer>
   <div class="wrap">
-    <div>© 2026 Take Form. All rights reserved.</div>
+    <div>© <span id="year">2026</span> Take Form</div>
     <nav aria-label="Legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
-      <a href="mailto:ricardotorodiaz@gmail.com?subject=Take%20Form%20Support">Support</a>
-      <button id="theme" class="btn btn-quiet btn-sm" type="button" aria-label="Toggle light or dark theme">Light / Dark</button>
+      <a href="mailto:support@takeform.app">support@takeform.app</a>
     </nav>
   </div>
 </footer>

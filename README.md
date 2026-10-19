@@ -1,6 +1,6 @@
 # takeform.app
 
-Marketing site and legal pages for **Take Form**, the habit tracker for iPhone.
+Marketing site and legal pages for **Take Form**, the habit tracker for iPhone. Support mail: support@takeform.app.
 
 Plain static HTML — no build step, no dependencies.
 

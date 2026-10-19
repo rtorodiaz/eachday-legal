@@ -13,14 +13,25 @@
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="discs" viewBox="0 0 1024 1024"><circle cx="347" cy="512" r="220" fill="var(--disc-1)"/><circle cx="512" cy="512" r="220" fill="var(--disc-2)"/><circle cx="677" cy="512" r="220" fill="var(--blue)"/></symbol>
+  <symbol id="moon-o" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="sun-o" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </defs></svg>
 <header class="nav">
   <div class="pill">
     <a class="brand" href="index.html" aria-label="Take Form home"><svg class="mark" aria-hidden="true"><use href="#discs"/></svg><span>Take Form</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="link" href="index.html#how">See how it works</a>
-      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">App Store</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a class="link" href="index.html#features">Features</a>
+      <a class="link" href="index.html#progress">Progress</a>
+      <a class="link" href="index.html#privacy">Privacy</a>
+      <a class="link" href="index.html#faq">FAQ</a>
     </nav>
+    <div class="nav-right">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Switch between light and dark mode">
+        <svg class="moon" aria-hidden="true"><use href="#moon-o"/></svg>
+        <svg class="sun" aria-hidden="true"><use href="#sun-o"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">Download</a>
+    </div>
   </div>
 </header>
 <main class="legal">
@@ -29,13 +40,13 @@
     <h1>Privacy Policy</h1>
     <p class="date">Effective date: October 19, 2026</p>
 
-    <p>Take Form ("the App") is a habit tracking app built by the Take Form team. Your privacy matters. This policy explains what data the App collects, how it's used, and your choices.</p>
+    <p>Take Form ("the App") is a habit tracker for iPhone built by the Take Form team. Your privacy matters. This policy explains what data the App handles, how it's used, and your choices.</p>
 
     <h2>Data We Collect</h2>
-    <p><strong>Habit data you create</strong> — habit names, goals, frequencies, completion entries, notes, streaks, badges, tags, and wildcards. All of this is stored locally on your device.</p>
-    <p><strong>App preferences</strong> — theme, accent color, sound settings, notification times, and layout options. Stored locally on your device.</p>
-    <p><strong>Apple Health data (optional)</strong> — if you choose to connect a habit to Apple Health, the App reads health metrics (steps, exercise minutes, sleep, calories, distance, water intake) to auto-populate your habit entries. The App only reads data from Apple Health — it never writes to it. This data stays on your device.</p>
-    <p><strong>Purchase information</strong> — if you subscribe to Take Form Pro, purchase and entitlement status is processed through RevenueCat, our subscription management service. RevenueCat receives only purchase-related data (subscription type, status, transaction receipts). It does not receive your habit data or app usage.</p>
+    <p><strong>Habit data you create</strong> — habit names, icons and colors, goals, frequencies, start and end dates, completion entries, skips, pauses, notes, timer sessions and streaks. All of this is stored locally on your device.</p>
+    <p><strong>App preferences</strong> — theme, behavior settings and reminder times. Stored locally on your device.</p>
+    <p><strong>Apple Health data (optional)</strong> — if you choose to connect a habit to Apple Health, the App reads the related metric (steps, exercise minutes, sleep, active calories, distance, water, time in daylight, protein, flights climbed, mindful minutes, stand hours or workouts) to fill in your habit entries. The App only reads data from Apple Health — it never writes to it. This data stays on your device and is never shared with us or with third parties.</p>
+    <p><strong>Purchase information</strong> — if you subscribe to Take Form Pro, purchase and entitlement status is processed through RevenueCat, our subscription management service. RevenueCat receives only purchase-related data (subscription type, status, transaction receipts) together with an anonymous app-generated identifier. It does not receive your habit data, your health data or your app usage.</p>
 
     <h2>Data We Do Not Collect</h2>
     <ul>
@@ -47,20 +58,23 @@
     </ul>
 
     <h2>iCloud Sync</h2>
-    <p>The App offers optional iCloud sync using Apple's CloudKit. When enabled, your habit data is synced across your devices through your personal iCloud account. This data is stored in Apple's iCloud infrastructure under your Apple Account and is not accessible to us. You can disable iCloud sync at any time in Settings.</p>
+    <p>The App offers optional iCloud sync using Apple's CloudKit. When enabled, your habit data is synced across your devices through your personal iCloud account. This data is stored in Apple's iCloud infrastructure under your Apple Account and is not accessible to us. You can disable iCloud sync at any time in Settings &gt; Data &amp; Sync.</p>
 
     <h2>Notifications</h2>
-    <p>All notifications are local — they are scheduled and delivered entirely on your device. No notification data is sent to external servers.</p>
+    <p>All reminders are local notifications — they are scheduled and delivered entirely on your device. No notification data is sent to external servers.</p>
+
+    <h2>Widgets and Live Activities</h2>
+    <p>Home Screen widgets and the timer's Live Activity read your habit data from the App's local storage on your device. Nothing is transmitted.</p>
 
     <h2>Data Export &amp; Deletion</h2>
-    <p>You can export all your data (JSON or CSV) at any time from Settings. You can also delete all your data from within the App. When you delete the App, all locally stored data is removed from your device.</p>
+    <p>You can export your data (JSON or CSV) from Settings &gt; Data &amp; Sync with Take Form Pro, and you can delete all your data from within the App at any time. When you delete the App, all locally stored data is removed from your device. Data synced to iCloud can be removed by deleting it in the App with iCloud sync enabled, or from your iCloud storage settings.</p>
 
     <h2>Third-Party Services</h2>
     <p>The App uses the following third-party service:</p>
     <ul>
       <li><strong>RevenueCat</strong> — for managing in-app subscriptions and purchases. <a href="https://www.revenuecat.com/privacy">RevenueCat Privacy Policy</a></li>
     </ul>
-    <p>No other third-party services, analytics tools, or advertising networks are used.</p>
+    <p>Purchases themselves are processed by Apple under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>. No other third-party services, analytics tools, or advertising networks are used.</p>
 
     <h2>Children's Privacy</h2>
     <p>The App does not knowingly collect personal information from children under 13. The App does not require any personal information to function.</p>
@@ -69,18 +83,17 @@
     <p>We may update this policy from time to time. Any changes will be posted on this page with an updated effective date.</p>
 
     <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at <a href="mailto:ricardotorodiaz@gmail.com">ricardotorodiaz@gmail.com</a>.</p>
-    <div class="footer-note">© <span id="year">2026</span> the Take Form team. Take Form — Habit tracker, streaks &amp; stats.</div>
+    <p>If you have questions about this privacy policy, contact us at <a href="mailto:support@takeform.app">support@takeform.app</a>.</p>
+    <div class="footer-note">© 2026 the Take Form team · <a href="https://takeform.app">takeform.app</a></div>
   </div>
 </main>
 <footer>
   <div class="wrap">
-    <div>© 2026 Take Form. All rights reserved.</div>
+    <div>© <span id="year">2026</span> Take Form</div>
     <nav aria-label="Legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-of-service.html">Terms of Service</a>
-      <a href="mailto:ricardotorodiaz@gmail.com?subject=Take%20Form%20Support">Support</a>
-      <button id="theme" class="btn btn-quiet btn-sm" type="button" aria-label="Toggle light or dark theme">Light / Dark</button>
+      <a href="mailto:support@takeform.app">support@takeform.app</a>
     </nav>
   </div>
 </footer>

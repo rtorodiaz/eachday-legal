@@ -66,11 +66,20 @@ button { font: inherit; }
 :root[data-theme="dark"] .nav .pill { box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
 .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); font-weight: 600; font-size: 16px; letter-spacing: -0.01em; padding-right: 10px; }
 .brand:hover { text-decoration: none; }
-.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links { display: flex; align-items: center; gap: 2px; }
+.nav-right { display: flex; align-items: center; gap: 6px; margin-left: 6px; }
+.theme-toggle { width: 40px; height: 40px; border-radius: 999px; border: 0; background: transparent; color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.theme-toggle:hover { background: var(--fill); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .sun { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .theme-toggle .sun { display: block; } :root:not([data-theme="light"]) .theme-toggle .moon { display: none; } }
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .moon { display: none; }
 .nav-links .link { color: var(--ink); font-size: 14px; font-weight: 500; padding: 0 12px; height: 40px; display: inline-flex; align-items: center; border-radius: 999px; }
 .nav-links .link:hover { background: var(--fill); text-decoration: none; }
 .nav-links .btn-primary, .nav-links .btn-primary:hover { color: var(--bg); }
-@media (max-width: 480px) { .nav .pill { padding-left: 12px; height: 48px; } .brand span { display: none; } .nav-links .link { padding: 0 10px; font-size: 13px; } }
+@media (max-width: 720px) { .nav-links { display: none; } .brand { padding-right: 6px; } }
+@media (max-width: 480px) { .nav .pill { padding-left: 12px; height: 48px; } }
 
 /* ---------- Buttons: ink on paper ---------- */
 .btn {
@@ -105,7 +114,7 @@ h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.
 }
 .hero .discs { margin: 0 auto 30px; width: 76px; height: 76px; }
 .hero h1 { max-width: 24ch; margin: 0 auto; }
-.hero .lead { max-width: 36ch; margin: 24px auto 0; }
+.hero .lead { max-width: 44ch; margin: 24px auto 0; text-wrap: balance; }
 .hero .cta { display: flex; justify-content: center; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
 .hero .fine { color: var(--ink-2); font-size: 13px; margin-top: 16px; }
 .hero-phone { margin: 64px auto 0; width: min(360px, 86vw); }
