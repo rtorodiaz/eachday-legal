@@ -114,16 +114,13 @@ h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.
 }
 .h1-quiet { color: var(--ink-2); font-weight: 500; }
 .h1-loud { color: var(--ink); font-weight: 800; }
-.chips { margin-top: 52px; display: grid; gap: 12px; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); }
-.chips-row { overflow: hidden; }
-.chips-track { display: flex; gap: 10px; width: max-content; animation: chips-scroll 60s linear infinite; }
-.chips-row.reverse .chips-track { animation-direction: reverse; animation-duration: 70s; }
+.chips { margin-top: 36px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.chips-track { display: flex; gap: 8px; width: max-content; animation: chips-scroll 70s linear infinite; }
 .chips:hover .chips-track { animation-play-state: paused; }
-.chip { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px; border-radius: 999px;
-  border: 1px solid var(--hairline); background: var(--card); color: var(--ink); font-size: 14.5px; font-weight: 500; white-space: nowrap; }
-.chip svg { width: 18px; height: 18px; }
+.chip { display: inline-flex; align-items: center; height: 30px; padding: 0 13px; border-radius: 999px;
+  border: 1px solid var(--hairline); color: var(--ink-2); font-size: 13px; font-weight: 500; white-space: nowrap; }
 @keyframes chips-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .chips-track { animation: none; } }
 .support-mail { margin-top: 26px; font-size: 18px; height: 56px; padding: 0 28px; }
@@ -132,8 +129,8 @@ h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.
 .hero .lead { max-width: 44ch; margin: 24px auto 0; text-wrap: balance; }
 .hero .cta { display: flex; justify-content: center; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
 .hero .fine { color: var(--ink-2); font-size: 13px; margin-top: 16px; }
-.hero-phone { margin: 56px auto 0; width: min(360px, 86vw); }
-@media (max-width: 720px) { .hero { padding-top: 116px; } .hero-phone { margin-top: 44px; } .chips { margin-top: 40px; } }
+.hero-phone { margin: 44px auto 0; width: min(360px, 86vw); }
+@media (max-width: 720px) { .hero { padding-top: 116px; } .hero-phone { margin-top: 44px; } .chips { margin-top: 28px; } }
 
 /* ---------- Trust strip (platforms / facts) ---------- */
 .strip { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 22px 0; margin-top: 88px; }
