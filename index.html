@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Form — Habit tracker, streaks &amp; stats</title>
+  <meta name="description" content="Habits don't just happen. They take form. Take Form is a habit tracker for iPhone that helps you make big changes through small, everyday actions, at your own pace.">
+  <meta name="theme-color" content="#E5EFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Take Form — Habit tracker, streaks &amp; stats">
+  <meta property="og:description" content="Habits don't just happen. They take form. Small, everyday actions, at your own pace.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="discs" viewBox="0 0 1024 1024">
+      <circle cx="347" cy="512" r="220" fill="var(--disc-1)"/>
+      <circle cx="512" cy="512" r="220" fill="var(--disc-2)"/>
+      <circle cx="677" cy="512" r="220" fill="var(--blue)"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M8 10.5V8a4 4 0 018 0v2.5" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="infinity" viewBox="0 0 24 24"><path d="M6.5 8.5c-2 0-3.5 1.6-3.5 3.5s1.5 3.5 3.5 3.5c3 0 5-7 11-7 2 0 3.5 1.6 3.5 3.5s-1.5 3.5-3.5 3.5c-3 0-5-7-11-7z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="play" viewBox="0 0 24 24"><path d="M7 5.5v13l11-6.5z" fill="currentColor"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></symbol>
+    <symbol id="book" viewBox="0 0 24 24"><path d="M4 5.5A2 2 0 016 4h5v15H6a2 2 0 00-2 2zM20 5.5A2 2 0 0018 4h-5v15h5a2 2 0 012 2z" fill="currentColor"/></symbol>
+    <symbol id="drop" viewBox="0 0 24 24"><path d="M12 2.5c3.5 5 7 8.5 7 12.5a7 7 0 01-14 0c0-4 3.5-7.5 7-12.5z" fill="currentColor"/></symbol>
+    <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" fill="currentColor"/></symbol>
+    <symbol id="run" viewBox="0 0 24 24"><circle cx="15" cy="4" r="2" fill="currentColor"/><path d="M8 21l3-6-3-2 2-5 4 1 3 3M11 15l3 2 1 4M7 11l2-3 4 .5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="dumbbell" viewBox="0 0 24 24"><path d="M3 10h2v4H3zM19 10h2v4h-2zM6 8h3v8H6zM15 8h3v8h-3zM9 11h6v2H9z" fill="currentColor"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path d="M20 4c-9 0-15 4-15 11 0 2 .5 3.5 1.5 5 3-7 7-10 10-11-2 3-5 6-7 13 1 0 2 .2 3 .2 7 0 8.5-8 7.5-18.2z" fill="currentColor"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z" fill="currentColor"/></symbol>
+    <symbol id="bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15zM10 20a2 2 0 004 0" fill="currentColor"/></symbol>
+    <symbol id="chart" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="6" width="4" height="15" rx="1" fill="currentColor"/><rect x="17" y="9" width="4" height="12" rx="1" fill="currentColor"/></symbol>
+    <symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="2" fill="currentColor"/><rect x="3" y="13" width="8" height="8" rx="2" fill="currentColor"/><rect x="13" y="13" width="8" height="8" rx="2" fill="currentColor"/></symbol>
+    <symbol id="timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 9v4l2.5 2M9 3h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="pause" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1.5" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="currentColor"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="iphone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="18" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 01-.5-8A5.5 5.5 0 0117 9a4.5 4.5 0 01-.5 9z" fill="currentColor"/></symbol>
+    <symbol id="eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18M10 10a3 3 0 004 4M6.5 6.7C4 8.3 2.5 12 2.5 12s3.5 7 9.5 7c1.6 0 3-.4 4.3-1M9.3 5.3A9 9 0 0112 5c6 0 9.5 7 9.5 7s-.9 1.8-2.6 3.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="health" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a4.5 4.5 0 018-2.8A4.5 4.5 0 0120 10c0 6-8 11-8 11z" fill="currentColor"/><path d="M6 12h3l1.5-3 2 6 1.5-3H18" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="export" viewBox="0 0 24 24"><path d="M12 3v11M8 7l4-4 4 4M5 13v6h14v-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="note" viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z" fill="currentColor"/><path d="M8 12h8M8 16h5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="apple" viewBox="0 0 24 24"><path d="M16.4 12.7c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.9-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-2.9.9-3.7 2.3-1.6 2.8-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.8 2.3 1.1 0 1.6-.7 2.9-.7 1.4 0 1.8.7 3 .7s2-1.1 2.7-2.2c.9-1.3 1.2-2.5 1.2-2.5s-2.3-.9-2.3-3.5zM14.1 5.6c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.8-1.3z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Take Form home">
+      <svg class="mark" aria-hidden="true"><use href="#discs"/></svg>
+      Take Form
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a class="hide-sm" href="#features">Features</a>
+      <a class="hide-sm" href="#privacy">Privacy</a>
+      <a class="hide-sm" href="#pricing">Pricing</a>
+      <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6760654043">
+        <svg width="14" height="14" aria-hidden="true"><use href="#apple"/></svg>
+        App Store
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ====================== HERO ====================== -->
+  <section class="hero">
+    <div class="wrap">
+      <svg class="discs" aria-hidden="true"><use href="#discs"/></svg>
+      <h1><span class="ink-blue">Habits don't just happen.</span><br><span class="ink">They take form.</span></h1>
+      <p class="lead">A habit tracker for iPhone that helps you make big changes through small, everyday actions, at your own pace.</p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6760654043">
+          <svg width="18" height="18" aria-hidden="true"><use href="#apple"/></svg>
+          Download on the App Store
+        </a>
+        <a class="btn btn-quiet btn-lg" href="#features">See how it works</a>
+      </div>
+      <p class="fine">Free with 3 habits. No account. Nothing leaves your phone.</p>
+
+      <div class="hero-phone">
+        <div class="phone dark" role="img" aria-label="Take Form's Today screen with a week strip, pending habits and a dimmed completed section">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span class="right"><i></i></span></div>
+            <div class="content">
+              <div class="navtitle"><b>Today</b><span class="plus">+</span></div>
+              <div class="card weekstrip">
+                <div><small>Mon</small><b>13</b></div>
+                <div><small>Tue</small><b>14</b></div>
+                <div><small>Wed</small><b>15</b></div>
+                <div><small>Thu</small><b>16</b></div>
+                <div class="sel"><small>Fri</small><b>17</b></div>
+                <div class="fut"><small>Sat</small><b>18</b></div>
+                <div class="fut"><small>Sun</small><b>19</b></div>
+              </div>
+              <div class="card rows">
+                <div class="row">
+                  <div class="ico" style="color:var(--teal)"><svg><use href="#leaf"/></svg></div>
+                  <div class="txt"><b>Meditate</b><span>4:12 of 10 min</span></div>
+                  <span class="cap"><svg><use href="#pause"/></svg>Stop</span>
+                </div>
+                <div class="row">
+                  <div class="ico" style="color:var(--blue)"><svg><use href="#drop"/></svg></div>
+                  <div class="txt"><b>Drink Water</b><span>1,250 / 2,000 ml</span></div>
+                  <span class="cap"><svg><use href="#plus"/></svg>Add</span>
+                </div>
+                <div class="row">
+                  <div class="ico" style="color:var(--green)"><svg><use href="#run"/></svg></div>
+                  <div class="txt"><b>Daily Steps</b><span>7,420 / 10,000 steps</span></div>
+                  <span class="cap">74%</span>
+                </div>
+                <div class="row">
+                  <div class="ico" style="color:var(--blue)"><svg><use href="#book"/></svg></div>
+                  <div class="txt"><b>Read a Book</b><span>20 pages</span></div>
+                  <span class="cap"><svg><use href="#check"/></svg>Done</span>
+                </div>
+              </div>
+              <div class="card rows done">
+                <div class="row">
+                  <div class="ico"><svg><use href="#check"/></svg></div>
+                  <div class="txt"><b>Wake Up Early</b></div>
+                </div>
+                <div class="row">
+                  <div class="ico"><svg><use href="#check"/></svg></div>
+                  <div class="txt"><b>Go to the Gym</b></div>
+                </div>
+                <div class="row">
+                  <div class="ico"><svg><use href="#check"/></svg></div>
+                  <div class="txt"><b>Keep a Journal</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="tabbar">
+              <div class="on"><svg><use href="#check-circle"/></svg>Today</div>
+              <div><svg><use href="#chart"/></svg>Progress</div>
+              <div><svg><use href="#grid"/></svg>Settings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FEATURES ====================== -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head center reveal" style="padding-top: 120px;">
+        <p class="eyebrow">Built around your day</p>
+        <h2>Build it, change it,<br>or leave it behind.</h2>
+        <p class="lead">Take Form stays out of the way. Pick a habit, decide how it's done, and watch your completed list grow a little every day.</p>
+      </div>
+
+      <div class="feature reveal">
+        <div class="copy">
+          <p class="eyebrow">Its own way</p>
+          <h2>Complete each habit its own way.</h2>
+          <p class="lead">A tap, a timer, a count, or automatically with Apple Health. Every habit gets the kind of check-in that fits it.</p>
+          <ul>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Yes/no habits</strong> for the things you simply do.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Counted habits</strong> like water, pages or steps, logged in increments.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Timed habits</strong> with a built-in timer you can start from the row.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Apple Health habits</strong> that log themselves, even if you forget to open the app.</span></li>
+          </ul>
+        </div>
+        <div class="art">
+          <div class="phone light" role="img" aria-label="A habit sheet with a running timer, a counted habit and an Apple Health habit">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="statusbar"><span>9:41</span><span class="right"><i></i></span></div>
+              <div class="content">
+                <div class="navtitle"><b>Today</b><span class="plus">+</span></div>
+                <div class="card weekstrip">
+                  <div><small>Mon</small><b>13</b></div><div><small>Tue</small><b>14</b></div><div><small>Wed</small><b>15</b></div><div><small>Thu</small><b>16</b></div><div class="sel"><small>Fri</small><b>17</b></div><div class="fut"><small>Sat</small><b>18</b></div><div class="fut"><small>Sun</small><b>19</b></div>
+                </div>
+                <div class="card rows">
+                  <div class="row">
+                    <div class="ico" style="color:var(--teal)"><svg><use href="#leaf"/></svg></div>
+                    <div class="txt"><b>Meditate</b><span>0:00 of 10 min</span></div>
+                    <span class="cap"><svg><use href="#play"/></svg>Start</span>
+                  </div>
+                  <div class="row">
+                    <div class="ico" style="color:var(--blue)"><svg><use href="#drop"/></svg></div>
+                    <div class="txt"><b>Drink Water</b><span>500 / 2,000 ml</span></div>
+                    <span class="cap"><svg><use href="#plus"/></svg>Add</span>
+                  </div>
+                  <div class="row">
+                    <div class="ico" style="color:var(--red)"><svg><use href="#dumbbell"/></svg></div>
+                    <div class="txt"><b>Go to the Gym</b></div>
+                    <span class="cap"><svg><use href="#check"/></svg>Done</span>
+                  </div>
+                  <div class="row">
+                    <div class="ico" style="color:var(--green)"><svg><use href="#run"/></svg></div>
+                    <div class="txt"><b>Daily Steps</b><span>Apple Health</span></div>
+                    <span class="cap">74%</span>
+                  </div>
+                  <div class="row">
+                    <div class="ico" style="color:var(--indigo)"><svg><use href="#moon"/></svg></div>
+                    <div class="txt"><b>Sleep Well</b><span>Apple Health</span></div>
+                    <span class="cap">92%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tabbar">
+                <div class="on"><svg><use href="#check-circle"/></svg>Today</div>
+                <div><svg><use href="#chart"/></svg>Progress</div>
+                <div><svg><use href="#grid"/></svg>Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature flip reveal">
+        <div class="copy">
+          <p class="eyebrow">Progress</p>
+          <h2>Watch your progress add up.</h2>
+          <p class="lead">Streaks, your month and year at a glance, and advanced stats. One clean Progress tab, no charts you have to decode.</p>
+          <ul>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Score</strong> by week, month or year, with how you compare to last time.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Insights</strong> like your best weekday, what's on the rise and what's slipping.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Your year in one picture</strong>, every day a dot.</span></li>
+          </ul>
+        </div>
+        <div class="art">
+          <div class="phone dark" role="img" aria-label="The Progress tab with a Today 5 of 7 summary, active streaks and a weekly score chart">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="statusbar"><span>9:41</span><span class="right"><i></i></span></div>
+              <div class="content">
+                <div class="navtitle"><b>Progress</b></div>
+                <div class="stat-card">
+                  <div>
+                    <p class="eyebrow">Today</p>
+                    <div class="lockup">5<small>/7</small></div>
+                    <span class="muted" style="font-size:12.5px">2 to go</span>
+                  </div>
+                  <hr>
+                  <div>
+                    <div style="font-size:15px">8 active streaks</div>
+                    <div style="display:flex;gap:8px;margin-top:8px">
+                      <svg width="18" height="18" style="color:var(--blue)"><use href="#book"/></svg>
+                      <svg width="18" height="18" style="color:var(--teal)"><use href="#leaf"/></svg>
+                      <svg width="18" height="18" style="color:var(--green)"><use href="#run"/></svg>
+                      <svg width="18" height="18" style="color:var(--red)"><use href="#dumbbell"/></svg>
+                      <svg width="18" height="18" style="color:var(--indigo)"><use href="#moon"/></svg>
+                      <svg width="18" height="18" style="color:var(--blue)"><use href="#drop"/></svg>
+                    </div>
+                  </div>
+                  <hr>
+                  <div>
+                    <p class="eyebrow">All time</p>
+                    <div class="cols" style="margin-top:8px">
+                      <div><b>1,284</b><span>Completions</span></div>
+                      <div><b>96</b><span>Perfect days</span></div>
+                      <div><b>212</b><span>Days tracked</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div style="font-weight:700;font-size:17px;padding:4px 2px 0">Score</div>
+                <div class="stat-card">
+                  <div>
+                    <p class="eyebrow" style="text-transform:uppercase;letter-spacing:.04em">Oct 13 – 19 average</p>
+                    <div class="lockup">86<small>%</small></div>
+                    <span style="font-size:12.5px;color:var(--green)">↑ 9% from last week</span>
+                  </div>
+                  <div class="bars"><i style="height:70%"></i><i style="height:85%"></i><i style="height:100%"></i><i style="height:60%"></i><i class="on" style="height:90%"></i><i style="height:40%;opacity:.15"></i><i style="height:40%;opacity:.15"></i></div>
+                </div>
+              </div>
+              <div class="tabbar">
+                <div><svg><use href="#check-circle"/></svg>Today</div>
+                <div class="on"><svg><use href="#chart"/></svg>Progress</div>
+                <div><svg><use href="#grid"/></svg>Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== BENTO ====================== -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Never let it slip</p>
+        <h2>Reminders, widgets, and a timer that stays in sight.</h2>
+      </div>
+      <div class="bento">
+        <div class="tile wide reveal">
+          <div class="glyph" style="background:var(--teal)"><svg><use href="#timer"/></svg></div>
+          <h3>A timer that stays in sight</h3>
+          <p>Start a timed habit and it follows you to the Lock Screen and the Dynamic Island as a Live Activity. Pause or finish without opening the app.</p>
+          <div class="art" style="display:flex;justify-content:center;padding-top:18px">
+            <div class="la" role="img" aria-label="Live Activity: Meditate, 6 minutes 12 seconds of 10 minutes">
+              <div class="ring"><svg><use href="#leaf"/></svg></div>
+              <div><b>Meditate</b><span>of 10 min</span></div>
+              <div class="time">6:12</div>
+            </div>
+          </div>
+        </div>
+        <div class="tile reveal">
+          <div class="glyph" style="background:var(--orange)"><svg><use href="#bell"/></svg></div>
+          <h3>A nudge at the right time</h3>
+          <p>Per-habit reminders on the days you choose, plus a daily summary if you want one. Quiet when there's nothing to do.</p>
+        </div>
+        <div class="tile reveal">
+          <div class="glyph" style="background:var(--blue)"><svg><use href="#grid"/></svg></div>
+          <h3>A tap from your Home Screen</h3>
+          <p>Small and medium widgets log a habit in one tap and show what's still open today.</p>
+          <div class="art" style="padding-top:14px">
+            <div class="mini-widget">
+              <div class="t">Read a Book</div>
+              <div class="s">12-day streak</div>
+              <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="half"></i><i></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="tile wide reveal">
+          <div class="glyph" style="background:var(--indigo)"><svg><use href="#sun"/></svg></div>
+          <h3>Your year, at a glance</h3>
+          <p>Every day, in one picture. Open any habit and see how it took form over the months.</p>
+          <div class="art" style="padding-top:16px">
+            <div class="year" aria-hidden="true" id="yearGrid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== STREAKS ====================== -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="feature reveal">
+        <div class="copy">
+          <p class="eyebrow">Forgiving by design</p>
+          <h2>Skip a day,<br>keep the streak.</h2>
+          <p class="lead">Life happens. Skips and pauses protect your streak, and nothing counts against you while you rest.</p>
+          <ul>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Skip</strong> a habit on a day it doesn't fit, with a swipe.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Vacation Mode</strong> pauses everything, then brings it all back.</span></li>
+            <li><svg><use href="#check-circle"/></svg><span><strong>Flexible frequencies</strong>: daily, specific days, or a few times a week.</span></li>
+          </ul>
+        </div>
+        <div class="art">
+          <div class="phone light" role="img" aria-label="Take Form in light mode with Vacation Mode on">
+            <div class="screen">
+              <div class="island"></div>
+              <div class="statusbar"><span>9:41</span><span class="right"><i></i></span></div>
+              <div class="content">
+                <div class="navtitle"><b>Today</b><span class="plus">+</span></div>
+                <div class="card" style="padding:14px 16px;display:flex;gap:12px;align-items:center">
+                  <div class="ico" style="width:34px;height:34px;display:grid;place-items:center;color:var(--orange)"><svg width="24" height="24"><use href="#sun"/></svg></div>
+                  <div style="flex:1"><b style="font-size:15px">Vacation Mode is on</b><div class="muted" style="font-size:12.5px">Your streaks are waiting. Resume whenever you're back.</div></div>
+                </div>
+                <div class="card rows" style="opacity:.55">
+                  <div class="row"><div class="ico" style="color:var(--blue)"><svg><use href="#book"/></svg></div><div class="txt"><b>Read a Book</b><span>Paused</span></div></div>
+                  <div class="row"><div class="ico" style="color:var(--teal)"><svg><use href="#leaf"/></svg></div><div class="txt"><b>Meditate</b><span>Paused</span></div></div>
+                  <div class="row"><div class="ico" style="color:var(--blue)"><svg><use href="#drop"/></svg></div><div class="txt"><b>Drink Water</b><span>Paused</span></div></div>
+                  <div class="row"><div class="ico" style="color:var(--red)"><svg><use href="#dumbbell"/></svg></div><div class="txt"><b>Go to the Gym</b><span>Paused</span></div></div>
+                  <div class="row"><div class="ico" style="color:var(--pink)"><svg><use href="#heart"/></svg></div><div class="txt"><b>Call a Loved One</b><span>Paused</span></div></div>
+                </div>
+                <div class="card" style="padding:14px 16px;text-align:center;font-weight:600;color:var(--blue);font-size:15px">Resume</div>
+              </div>
+              <div class="tabbar">
+                <div class="on"><svg><use href="#check-circle"/></svg>Today</div>
+                <div><svg><use href="#chart"/></svg>Progress</div>
+                <div><svg><use href="#grid"/></svg>Settings</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== PRIVACY ====================== -->
+  <section id="privacy" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Private by default</p>
+        <h2>Your habits are yours.</h2>
+        <p class="lead">No account, no analytics, no tracking SDKs. Your data lives on your iPhone, and in your own iCloud if you turn sync on.</p>
+      </div>
+      <div class="privacy-grid">
+        <div class="pcard reveal">
+          <div class="glyph"><svg><use href="#iphone"/></svg></div>
+          <h3>Stored on your device</h3>
+          <p>Habits, entries, notes and streaks are saved locally. There is no Take Form server holding your data.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="glyph"><svg><use href="#eye-off"/></svg></div>
+          <h3>No tracking</h3>
+          <p>No analytics, advertising or crash-reporting SDKs. We never ask for your email or location.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="glyph"><svg><use href="#cloud"/></svg></div>
+          <h3>Optional iCloud sync</h3>
+          <p>Turn it on to keep your devices in step through your own private iCloud, encrypted in transit and at rest.</p>
+        </div>
+        <div class="pcard reveal">
+          <div class="glyph"><svg><use href="#health"/></svg></div>
+          <h3>Apple Health, read-only</h3>
+          <p>Connect a habit and Take Form reads the metric to fill in your day. It never writes to Health and the data stays on your phone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== PRICING ====================== -->
+  <section id="pricing" class="pricing">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Start free. Go Pro when you're ready.</h2>
+        <p class="lead">Free includes 3 habits with widgets, reminders and notes. Pro removes the cap and shows you the full picture of your progress.</p>
+      </div>
+      <div class="compare reveal" role="table" aria-label="What you get, Free versus Pro">
+        <div class="r head" role="row"><span class="lbl">What you get</span><span class="free">Free</span><span class="pro">Pro</span></div>
+        <div class="r" role="row"><span class="lbl">Habit limit</span><span class="val">3</span><span class="val"><svg><use href="#infinity"/></svg></span></div>
+        <div class="r" role="row"><span class="lbl">Widgets, reminders &amp; notes</span><span class="ok" style="color:var(--ink-3)"><svg><use href="#check"/></svg></span><span class="ok"><svg><use href="#check"/></svg></span></div>
+        <div class="r" role="row"><span class="lbl">Advanced stats &amp; insights</span><span class="dim"><svg><use href="#lock"/></svg></span><span class="ok"><svg><use href="#check"/></svg></span></div>
+        <div class="r" role="row"><span class="lbl">Apple Health sync</span><span class="dim"><svg><use href="#lock"/></svg></span><span class="ok"><svg><use href="#check"/></svg></span></div>
+        <div class="r" role="row"><span class="lbl">Vacation Mode</span><span class="dim"><svg><use href="#lock"/></svg></span><span class="ok"><svg><use href="#check"/></svg></span></div>
+        <div class="r" role="row"><span class="lbl">Export your data</span><span class="dim"><svg><use href="#lock"/></svg></span><span class="ok"><svg><use href="#check"/></svg></span></div>
+      </div>
+      <div class="plans reveal">
+        <div class="plan">
+          <div class="name">Monthly</div>
+          <div class="price">$5.99<small>/month</small></div>
+          <div class="note">Renews automatically.</div>
+        </div>
+        <div class="plan sel">
+          <span class="save">Save 58%</span>
+          <div class="name">Yearly</div>
+          <div class="price">$29.99<small>/year</small></div>
+          <div class="note">7-day free trial. No charge today.</div>
+        </div>
+        <div class="plan">
+          <div class="name">Lifetime</div>
+          <div class="price">$59.99<small> once</small></div>
+          <div class="note">One-time purchase, yours forever.</div>
+        </div>
+      </div>
+      <p class="fine">Prices in USD and may vary by region. Subscriptions are billed through your Apple ID and can be cancelled anytime in Settings.</p>
+    </div>
+  </section>
+
+  <!-- ====================== FAQ ====================== -->
+  <section>
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>Good to know.</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. Take Form works the moment you open it. There is nothing to sign up for and no email to give.</p>
+        </details>
+        <details>
+          <summary>What happens to my data if I stop paying for Pro?</summary>
+          <p>Nothing is deleted. Your habits and history stay on your phone. You keep tracking up to 3 habits for free and can choose which ones stay active.</p>
+        </details>
+        <details>
+          <summary>Does it work with Apple Health?</summary>
+          <p>Yes. Steps, exercise minutes, sleep, water, calories, distance, stand hours and more can fill in a habit automatically. Take Form only reads from Health, it never writes to it.</p>
+        </details>
+        <details>
+          <summary>Can I use it on iPad or Mac?</summary>
+          <p>Take Form is designed for iPhone. It installs on iPad in iPhone-compatibility mode. A dedicated iPad layout is on the roadmap.</p>
+        </details>
+        <details>
+          <summary>Can I export my data?</summary>
+          <p>Pro includes export to JSON or CSV at any time from Settings. Your data is never locked in.</p>
+        </details>
+        <details>
+          <summary>How does the free trial work?</summary>
+          <p>The yearly plan comes with a 7-day free trial. You're not charged today, we remind you two days before it ends, and you can cancel anytime from your Apple ID subscriptions.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FINAL CTA ====================== -->
+  <section class="cta-final">
+    <div class="wrap reveal">
+      <svg class="discs" aria-hidden="true"><use href="#discs"/></svg>
+      <h2>Every change starts somewhere.</h2>
+      <p class="lead">Here's your first habit. Pick one, and watch your days take form.</p>
+      <a class="btn btn-primary btn-lg" href="https://apps.apple.com/app/id6760654043">
+        <svg width="18" height="18" aria-hidden="true"><use href="#apple"/></svg>
+        Download on the App Store
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year">2026</span> Take Form. All rights reserved.</div>
+    <nav aria-label="Legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Service</a>
+      <a href="mailto:ricardotorodiaz@gmail.com?subject=Take%20Form%20Support">Support</a>
+      <button id="theme" class="btn btn-quiet btn-sm" type="button" aria-label="Toggle light or dark theme">Light / Dark</button>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Year-at-a-glance dots: a deterministic pattern so it looks the same on every load.
+  (function () {
+    var g = document.getElementById('yearGrid'); if (!g) return;
+    var html = '';
+    for (var i = 0; i < 26 * 7; i++) {
+      var v = (Math.sin(i * 12.9898) * 43758.5453) % 1; if (v < 0) v += 1;
+      var ramp = i / (26 * 7);
+      var cls = v < 0.55 + ramp * 0.3 ? 'on' : (v < 0.75 ? 'half' : '');
+      if (i > 26 * 7 - 9) cls = '';
+      html += '<i class="' + cls + '"></i>';
+    }
+    g.innerHTML = html;
+  })();
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>
